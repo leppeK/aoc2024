@@ -5,7 +5,6 @@ import (
 	"os"
 	"sort"
 	"strconv"
-	"strings"
 )
 
 func main() {
@@ -29,25 +28,16 @@ func Counts[S []E, E comparable](s S, e E) int {
 }
 
 func generate_array(input []byte) ([]int, []int) {
-	var l, r []int
+	var L, R []int
 
 	// voor elke regel in input
-	for _, line := range strings.split(string(input), "\n") {
+	for _, line := range Strings.split(string(input), "\n") {
 		if line == "" {
 			continue
 		}
-		item := strings.split(line, "   ")
+		item := Strings.split(line, "   ")
 
 		// splits links van 3 spaties naar array l
-func Counts[S []E, E comparable](s S, e E) int {
-	var n int
-	for _, v := range s {
-		if v == e {
-			n++
-		}
-	}
-	return n
-}
 		itemL, _ := strconv.Atoi(item[0])
 
 		// splits rechts van 3 spaties naar array R
@@ -75,7 +65,6 @@ func part1(input []byte) int {
 	}
 	return distance
 }
-
 
 func part2(input []byte) int {
 	sim := 0
